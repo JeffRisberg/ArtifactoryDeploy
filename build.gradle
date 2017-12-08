@@ -1,0 +1,116 @@
+/**
+ * @author Jeff Risberg
+ * @since 11/26/17
+ */
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
+        classpath "com.avast.gradle:docker-compose-gradle-plugin:0.4.5"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'docker-compose'
+
+version = '1.0'
+
+def jarName = "ArtifactoryDeploy-all"
+
+ext {
+    guiceVersion = '4.1.0'
+    jerseyVersion = '2.9.1'
+}
+
+assemble.dependsOn shadowJar
+
+
+task buildApplicationDockerImage(type: Exec) {
+    executable "docker"
+    args "build", "-t", "incra/application", "-f", "Dockerfile.application", "."
+}
+
+task buildStorageDockerImage(type: Exec) {
+    executable "docker"
+    args "build", "-t", "incra/storage", "-f", "Dockerfile.storage", "."
+}
+
+task buildDockerImages(type: Exec) {
+    executable "echo"
+    args "Build images"
+}
+buildDockerImages.dependsOn(buildApplicationDockerImage)
+buildDockerImages.dependsOn(buildStorageDockerImage)
+
+task cleanApplicationDockerImage(type: Exec) {
+    ignoreExitValue true
+    executable "docker"
+    args "rmi", "incra/application", "--force"
+}
+
+task cleanStorageDockerImage(type: Exec) {
+    ignoreExitValue true
+    executable "docker"
+    args "rmi", "incra/storage", "--force"
+}
+
+task cleanDockerImages(type: Exec) {
+    executable "echo"
+    args "Cleaned images"
+}
+cleanDockerImages.finalizedBy(cleanApplicationDockerImage)
+cleanDockerImages.finalizedBy(cleanStorageDockerImage)
+
+
+dependencies {
+    compile 'commons-collections:commons-collections:3.2.2'
+    compile 'commons-configuration:commons-configuration:1.6'
+
+    compile group: 'com.google.inject', name: 'guice', version: guiceVersion
+    compile group: 'com.google.inject.extensions', name: 'guice-servlet', version: guiceVersion
+
+    compile group: 'org.eclipse.jetty', name: 'jetty-server', version: '9.2.0.v20140526'
+    compile group: 'org.eclipse.jetty', name: 'jetty-servlet', version: '9.2.0.v20140526'
+
+    compile group: 'org.glassfish.jersey.core', name: 'jersey-common', version: jerseyVersion
+    compile group: 'org.glassfish.jersey.core', name: 'jersey-server', version: jerseyVersion
+
+    compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet', version: jerseyVersion
+    compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: jerseyVersion
+    compile group: 'org.glassfish.hk2', name: 'hk2', version: '2.3.0-b05'
+    compile group: 'org.glassfish.hk2', name: 'guice-bridge', version: '2.2.0'
+
+    compile 'com.zaxxer:HikariCP:2.7.4'
+    compile 'mysql:mysql-connector-java:5.1.45'
+
+    testCompile "junit:junit:4.+"
+}
+
+
+shadowJar {
+    zip64 true
+    baseName = jarName
+    classifier = null
+    mergeServiceFiles()
+    manifest {
+        attributes ('Implementation-Title': project.name,
+                'Manifest-Version': '1.0',
+                'Implementation-Version': project.version,
+                'Main-Class': 'com.incra.Main')
+    }
+    from { [project.configurations.compile] } {
+        exclude "META-INF/*.SF"
+        exclude "META-INF/*.DSA"
+        exclude "META-INF/*.RSA"
+    }
+    with jar
+}
