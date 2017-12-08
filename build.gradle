@@ -18,6 +18,10 @@ repositories {
     mavenCentral()
 }
 
+plugins {
+    id "com.jfrog.artifactory" version "latest.release"
+}
+
 apply plugin: 'java'
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'docker-compose'
@@ -70,6 +74,18 @@ task cleanDockerImages(type: Exec) {
 cleanDockerImages.finalizedBy(cleanApplicationDockerImage)
 cleanDockerImages.finalizedBy(cleanStorageDockerImage)
 
+
+artifactory {
+    contextUrl = "${artifactory_contextUrl}"   //The base Artifactory URL if not overridden by the publisher/resolver
+    resolve {
+        repository {
+            repoKey = 'gradle-dev-local'
+            username = "${artifactory_user}" // Optional resolver user name (leave out to use anonymous resolution)
+            password = "${artifactory_password}" // The resolver password
+            maven = true
+        }
+    }
+}
 
 dependencies {
     compile 'commons-collections:commons-collections:3.2.2'
