@@ -12,6 +12,7 @@
     <orderEntry type="module" module-name="ArtifactoryDeploy_main" />
     <orderEntry type="library" name="Gradle: commons-collections:commons-collections:3.2.2" level="project" />
     <orderEntry type="library" name="Gradle: commons-configuration:commons-configuration:1.6" level="project" />
+    <orderEntry type="library" name="Gradle: com.incra:core:1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.inject:guice:4.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.inject.extensions:guice-servlet:4.1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-server:9.2.0.v20140526" level="project" />
@@ -22,6 +23,7 @@
     <orderEntry type="library" name="Gradle: org.glassfish.jersey.media:jersey-media-json-jackson:2.9.1" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2:hk2:2.3.0-b05" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2:guice-bridge:2.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.hibernate:hibernate-entitymanager:4.3.11.Final" level="project" />
     <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:2.7.4" level="project" />
     <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:5.1.45" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
@@ -55,18 +57,28 @@
     <orderEntry type="library" name="Gradle: org.glassfish.hk2:hk2-config:2.3.0-b05" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2:hk2-runlevel:2.3.0-b05" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2:class-model:2.3.0-b05" level="project" />
+    <orderEntry type="library" name="Gradle: org.jboss.logging:jboss-logging:3.1.3.GA" level="project" />
+    <orderEntry type="library" name="Gradle: org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1" level="project" />
+    <orderEntry type="library" name="Gradle: org.hibernate:hibernate-core:4.3.11.Final" level="project" />
+    <orderEntry type="library" name="Gradle: dom4j:dom4j:1.6.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.hibernate.common:hibernate-commons-annotations:4.0.5.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.javassist:javassist:3.18.1-GA" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Gradle: commons-beanutils:commons-beanutils:1.7.0" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-util:9.2.0.v20140526" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b05" level="project" />
-    <orderEntry type="library" name="Gradle: org.javassist:javassist:3.18.1-GA" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.3.2" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.3.2" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.3.2" level="project" />
     <orderEntry type="library" name="Gradle: org.jvnet:tiger-types:1.4" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2.external:bean-validator:2.3.0-b05" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2.external:asm-all-repackaged:2.3.0-b05" level="project" />
+    <orderEntry type="library" name="Gradle: antlr:antlr:2.7.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.jboss:jandex:1.1.0.Final" level="project" />
+    <orderEntry type="library" name="Gradle: xml-apis:xml-apis:1.0.b2" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="ArtifactoryDeploy_main" />
 </module>

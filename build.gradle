@@ -1,6 +1,6 @@
 /**
  * @author Jeff Risberg
- * @since 11/26/17
+ * @since 12/06/17
  */
 
 apply plugin: 'java'
@@ -14,6 +14,7 @@ buildscript {
         jcenter()
     }
     dependencies {
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4+"
         classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
         classpath "com.avast.gradle:docker-compose-gradle-plugin:0.4.5"
     }
@@ -92,6 +93,8 @@ dependencies {
     compile 'commons-collections:commons-collections:3.2.2'
     compile 'commons-configuration:commons-configuration:1.6'
 
+    compile "com.incra:core:1.0"
+
     compile group: 'com.google.inject', name: 'guice', version: guiceVersion
     compile group: 'com.google.inject.extensions', name: 'guice-servlet', version: guiceVersion
 
@@ -105,6 +108,8 @@ dependencies {
     compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: jerseyVersion
     compile group: 'org.glassfish.hk2', name: 'hk2', version: '2.3.0-b05'
     compile group: 'org.glassfish.hk2', name: 'guice-bridge', version: '2.2.0'
+
+    compile 'org.hibernate:hibernate-entitymanager:4.3.11.Final'
 
     compile 'com.zaxxer:HikariCP:2.7.4'
     compile 'mysql:mysql-connector-java:5.1.45'
