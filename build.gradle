@@ -3,6 +3,11 @@
  * @since 11/26/17
  */
 
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'docker-compose'
+
+
 buildscript {
     repositories {
         mavenCentral()
@@ -14,17 +19,13 @@ buildscript {
     }
 }
 
+allprojects {
+    apply plugin: "com.jfrog.artifactory"
+}
+
 repositories {
     mavenCentral()
 }
-
-plugins {
-    id "com.jfrog.artifactory" version "latest.release"
-}
-
-apply plugin: 'java'
-apply plugin: 'com.github.johnrengelman.shadow'
-apply plugin: 'docker-compose'
 
 version = '1.0'
 
