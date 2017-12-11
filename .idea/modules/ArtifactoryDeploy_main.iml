@@ -11,7 +11,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: commons-collections:commons-collections:3.2.2" level="project" />
     <orderEntry type="library" name="Gradle: commons-configuration:commons-configuration:1.6" level="project" />
-    <orderEntry type="library" name="Gradle: com.incra:core:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.company:core:1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.inject:guice:4.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.inject.extensions:guice-servlet:4.1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-server:9.2.0.v20140526" level="project" />

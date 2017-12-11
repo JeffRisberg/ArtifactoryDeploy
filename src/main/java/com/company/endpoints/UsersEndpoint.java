@@ -1,7 +1,7 @@
 package com.company.endpoints;
 
-import com.incra.models.User;
-import com.incra.services.UserService;
+import com.company.models.User;
+import com.company.services.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

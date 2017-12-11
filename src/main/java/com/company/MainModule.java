@@ -7,7 +7,7 @@ import com.google.inject.Scopes;
 import com.google.inject.servlet.ServletModule;
 import com.company.common.base.config.AppConfig;
 import com.company.common.base.services.config.EnvironmentBasedMySQLConfiguration;
-import com.incra.services.*;
+import com.company.services.*;
 
 /**
  * @author Jeff Risberg

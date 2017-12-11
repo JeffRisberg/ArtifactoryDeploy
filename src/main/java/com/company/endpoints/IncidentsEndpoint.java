@@ -1,8 +1,8 @@
 package com.company.endpoints;
 
+import com.company.models.Incident;
+import com.company.services.IncidentService;
 import com.google.inject.Singleton;
-import com.incra.models.Incident;
-import com.incra.services.IncidentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
