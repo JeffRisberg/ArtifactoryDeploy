@@ -1,4 +1,4 @@
-package com.incra.common.base.services.constants;
+package com.company.common.base.services.constants;
 
 /**
  */

@@ -1,8 +1,7 @@
-package com.incra.common.base.services.config;
+package com.company.common.base.services.config;
 
-import com.incra.common.base.config.DatabaseConfig;
-
-import static com.incra.common.base.services.constants.EnvironmentKeys.*;
+import com.company.common.base.config.DatabaseConfig;
+import com.company.common.base.services.constants.EnvironmentKeys;
 
 public class EnvironmentBasedMySQLConfiguration implements DatabaseConfig {
 
@@ -21,17 +20,17 @@ public class EnvironmentBasedMySQLConfiguration implements DatabaseConfig {
 
     @Override
     public String getUsername() {
-        return this.getFromEnv(MYSQL_USER);
+        return this.getFromEnv(EnvironmentKeys.MYSQL_USER);
     }
 
     @Override
     public String getPassword() {
-        return this.getFromEnv(MYSQL_PASSWORD);
+        return this.getFromEnv(EnvironmentKeys.MYSQL_PASSWORD);
     }
 
     @Override
     public String getServer() {
-        return this.getFromEnv(MYSQL_URL);
+        return this.getFromEnv(EnvironmentKeys.MYSQL_URL);
     }
 
     @Override
@@ -41,15 +40,15 @@ public class EnvironmentBasedMySQLConfiguration implements DatabaseConfig {
 
     @Override
     public String getDb() {
-        return this.getFromEnv(MYSQL_DEFAULT_DATABASE);
+        return this.getFromEnv(EnvironmentKeys.MYSQL_DEFAULT_DATABASE);
     }
 
     @Override
     public String getUrl() {
         if (this.getDb().equals("")) {
-            return this.getFromEnv(MYSQL_URL);
+            return this.getFromEnv(EnvironmentKeys.MYSQL_URL);
         } else {
-            return this.getFromEnv(MYSQL_URL) + "/" + this.getDb();
+            return this.getFromEnv(EnvironmentKeys.MYSQL_URL) + "/" + this.getDb();
         }
     }
 
@@ -60,31 +59,31 @@ public class EnvironmentBasedMySQLConfiguration implements DatabaseConfig {
 
     @Override
     public int getConnectionMin() {
-        String connectionMin = this.getFromEnv(MYSQL_CONNECTION_MINIMUM_IDLE);
+        String connectionMin = this.getFromEnv(EnvironmentKeys.MYSQL_CONNECTION_MINIMUM_IDLE);
         return Integer.parseInt(connectionMin);
     }
 
     @Override
     public int getConnectionMax() {
-        String connectionMax = this.getFromEnv(MYSQL_CONNECTION_MAXIMUM_CONNECTIONS);
+        String connectionMax = this.getFromEnv(EnvironmentKeys.MYSQL_CONNECTION_MAXIMUM_CONNECTIONS);
         return Integer.parseInt(connectionMax);
     }
 
     @Override
     public long getConnectionTimeoutMs() {
-        String connectionTimeout = this.getFromEnv(MYSQL_CONNECTION_TIMEOUT);
+        String connectionTimeout = this.getFromEnv(EnvironmentKeys.MYSQL_CONNECTION_TIMEOUT);
         return Integer.parseInt(connectionTimeout);
     }
 
     @Override
     public long getConnectionIdleTimeoutMs() {
-        String connectionTimeout = this.getFromEnv(MYSQL_IDLE_TIMEOUT);
+        String connectionTimeout = this.getFromEnv(EnvironmentKeys.MYSQL_IDLE_TIMEOUT);
         return Integer.parseInt(connectionTimeout);
     }
 
     @Override
     public long getConnectionMaxLifetimeMs() {
-        return Long.parseLong(this.getFromEnv(MYSQL_CONNECTION_MAX_LIFETIME));
+        return Long.parseLong(this.getFromEnv(EnvironmentKeys.MYSQL_CONNECTION_MAX_LIFETIME));
     }
 
     @Override

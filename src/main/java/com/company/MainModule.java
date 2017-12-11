@@ -1,12 +1,12 @@
-package com.incra;
+package com.company;
 
+import com.company.common.base.binding.MySQL;
+import com.company.common.base.config.DatabaseConfig;
+import com.company.common.base.services.config.EnvironmentBasedAppConfig;
 import com.google.inject.Scopes;
 import com.google.inject.servlet.ServletModule;
-import com.incra.common.base.binding.MySQL;
-import com.incra.common.base.config.AppConfig;
-import com.incra.common.base.config.DatabaseConfig;
-import com.incra.common.base.services.config.EnvironmentBasedAppConfig;
-import com.incra.common.base.services.config.EnvironmentBasedMySQLConfiguration;
+import com.company.common.base.config.AppConfig;
+import com.company.common.base.services.config.EnvironmentBasedMySQLConfiguration;
 import com.incra.services.*;
 
 /**

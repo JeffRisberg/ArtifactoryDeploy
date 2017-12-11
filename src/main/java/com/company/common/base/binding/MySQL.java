@@ -1,4 +1,4 @@
-package com.incra.common.base.binding;
+package com.company.common.base.binding;
 
 import com.google.inject.BindingAnnotation;
 

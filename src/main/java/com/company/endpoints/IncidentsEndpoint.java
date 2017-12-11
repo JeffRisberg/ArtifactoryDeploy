@@ -1,4 +1,4 @@
-package com.incra.endpoints;
+package com.company.endpoints;
 
 import com.google.inject.Singleton;
 import com.incra.models.Incident;

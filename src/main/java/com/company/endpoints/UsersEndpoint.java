@@ -1,4 +1,4 @@
-package com.incra.endpoints;
+package com.company.endpoints;
 
 import com.incra.models.User;
 import com.incra.services.UserService;

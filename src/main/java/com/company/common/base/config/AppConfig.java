@@ -1,4 +1,4 @@
-package com.incra.common.base.config;
+package com.company.common.base.config;
 
 import org.apache.commons.configuration.Configuration;
 

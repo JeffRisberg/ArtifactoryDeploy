@@ -1,4 +1,4 @@
-package com.incra;
+package com.company;
 
 import com.google.inject.Guice;
 import org.glassfish.hk2.api.ServiceLocator;

@@ -1,7 +1,7 @@
-package com.incra.common.base.services.config;
+package com.company.common.base.services.config;
 
 import com.google.common.annotations.VisibleForTesting;
-import com.incra.common.base.config.AppConfig;
+import com.company.common.base.config.AppConfig;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.slf4j.Logger;
